@@ -11,8 +11,12 @@ class Program{
 		int z = 0;
 		while(i != 42)
 		{
+			z = 0;
 			i = in.nextInt();
+			k = 0;
 			x = i;
+			if (i == 1)
+				z = 1;
 			while (x > 0)
 			{
 				k = k + x % 10;
@@ -24,12 +28,12 @@ class Program{
 				if (k % l == 0)
 				{
 					z = 1;
+					break;
 				}
 				l++;
 			}
-			if (z == 1)
+			if (z == 0)
 			{
-				z = 0;
 				j = j + 1;
 			}
 		}
