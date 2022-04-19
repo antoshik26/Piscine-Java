@@ -25,6 +25,7 @@ public class UsersArrayList implements UsersList
 			userslist = userslist_2;
 		}
 		userslist[count] = user;
+		// userslist[count].toString();
 		count++;
 	}
 
@@ -40,9 +41,6 @@ public class UsersArrayList implements UsersList
 		catch(UserNotFoundException e)
 		{
 			System.out.println(e.getMessage());
-		}
-		finally
-		{
 			System.exit(-1);
 		}
 		return (userslist[id]);
@@ -51,14 +49,16 @@ public class UsersArrayList implements UsersList
 	public User getUserById(int id)
 	{
 		int i = 0;
-		try
+		while (i < count)
 		{
-			while (i < count)
-			{
-				if (userslist[i].getIdentifier() == id)
-					break;
-				i++;
-			}
+			if (userslist[i].getIdentifier() == id)
+				break;
+			i++;
+		}
+		try
+		{	
+			if (id <= 0)
+				throw new UserNotFoundException("User not found.");
 			if (i == count && userslist[i].getIdentifier() != id)
 				throw new UserNotFoundException("User not found.");
 			
@@ -66,9 +66,6 @@ public class UsersArrayList implements UsersList
 		catch(UserNotFoundException e)
 		{
 			System.out.println(e.getMessage());
-		}
-		finally
-		{
 			System.exit(-1);
 		}
 		return (userslist[i]);
