@@ -23,7 +23,11 @@ class Program{
 				}
 				i++;
 			}
-			if (j == 0)
+			if (a == 1)
+			{
+				System.out.print(false + " " + (i - 1));
+			}
+			else if (j == 0)
 			{
 				System.out.println(true + " " + (i - 1));
 			}
