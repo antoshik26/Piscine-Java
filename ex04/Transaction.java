@@ -27,7 +27,7 @@ public class Transaction
         if (Transfer_amount > 0)
         {
             _Transfer_category = Transfer_category.debet;
-            if (Transfer_amount <  Recipient.getBalance())
+            if (Transfer_amount >  Recipient.getBalance())
             {
                 System.out.print("IllegalArgument");
                 System.exit(-1);
@@ -36,7 +36,7 @@ public class Transaction
         else
         {
             _Transfer_category = Transfer_category.credit;
-            if (Transfer_amount <  Sender.getBalance())
+            if (Transfer_amount >  Sender.getBalance())
             {
                 System.out.print("IllegalArgument");
                 System.exit(-1);

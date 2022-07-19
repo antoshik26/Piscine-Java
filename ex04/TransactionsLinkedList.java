@@ -78,7 +78,15 @@ public class TransactionsLinkedList {
 
     public Transaction[] toArray()
     {
+        int i = 0;
+        Node newhead = head;
         Transaction[] arrayTransactions = new Transaction[size];
+        while (i < size)
+        {
+            arrayTransactions[i] = newhead.data;
+            i++;
+            newhead = newhead.next;
+        }
         return (arrayTransactions);
     }
 

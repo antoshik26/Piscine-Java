@@ -6,6 +6,12 @@ public class TransactionsLinkedList {
     private Node head;
     private Node last;
     private int size;
+    public TransactionsLinkedList()
+    {
+        head = null;
+        last = null;
+        size = 0;
+    }
     private class Node
     {
         private Node prev;
@@ -46,7 +52,7 @@ public class TransactionsLinkedList {
     }
 
     public boolean remove(UUID _uuid){
-        for(Node temp = head;temp!=null;temp = temp.next){
+        for(Node temp = head; temp!=null; temp = temp.next){
             if(temp.data.get_uuid().equals(_uuid)){
                 unLike(temp);
                 return true;
@@ -78,7 +84,15 @@ public class TransactionsLinkedList {
 
     public Transaction[] toArray()
     {
+        int i = 0;
+        Node newhead = head;
         Transaction[] arrayTransactions = new Transaction[size];
+        while (i < size)
+        {
+            arrayTransactions[i] = newhead.data;
+            i++;
+            newhead = newhead.next;
+        }
         return (arrayTransactions);
     }
 

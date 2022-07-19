@@ -9,6 +9,10 @@ public class TransactionsService {
             super(errorMessage);
         }
     }
+    public TransactionsService()
+    {
+        _ListUser = new UserLinkedList();
+    }
 
     public void UserADD(User newUser)
     {
@@ -55,6 +59,10 @@ public class TransactionsService {
         LinkedList<Transaction> ListIncorrectTransaction = new LinkedList<Transaction>();
 
         return (ListIncorrectTransaction);
+    }
+
+    public UserLinkedList get_ListUser() {
+        return _ListUser;
     }
 
 }

@@ -18,6 +18,7 @@ public class UserLinkedList {
         }
     }
 
+
     public boolean UserLinkedListADD(User data)
     {
         Node temp = this.last;
@@ -77,8 +78,19 @@ public class UserLinkedList {
 
     public User[] toArray()
     {
+        int i = 0;
+        Node newhead = head;
         User[] arrayTransactions = new User[size];
+        while (i < size)
+        {
+            arrayTransactions[i] = newhead.data;
+            i++;
+            newhead = newhead.next;
+        }
         return (arrayTransactions);
     }
 
+    public int getSize() {
+        return size;
+    }
 }

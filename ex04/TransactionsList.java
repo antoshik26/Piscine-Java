@@ -10,6 +10,7 @@ public class TransactionsList {
     }
     public TransactionsList()
     {
+        ListTransaction = new TransactionsLinkedList();
     }
 
     public void AddTransactions(Transaction newTransaction)
@@ -20,7 +21,7 @@ public class TransactionsList {
     public int DeleteTransactions(UUID uuid)
     {
         try {
-            if (ListTransaction.remove(uuid) == true)
+            if (ListTransaction.remove(uuid) != true)
             {
                 throw new TransactionNotFoundException(uuid.toString() + "not found.");
             }
@@ -28,9 +29,6 @@ public class TransactionsList {
         catch (Exception e)
         {
             System.out.println(e.toString());
-        }
-        finally {
-            System.exit(-1);
         }
         return (0);
     }

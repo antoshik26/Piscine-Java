@@ -16,6 +16,7 @@ public class User
             _Balance = 0;
         else
             _Balance = Balance;
+        _TransactionList = new TransactionsList();
     }
 
     public int getIdentifier()

@@ -2,7 +2,7 @@ import java.util.LinkedList;
 import java.util.UUID;
 
 public class TransactionsList {
-    private TransactionsLinkedList ListTransaction;
+    private TransactionsLinkedList ListTransaction = new TransactionsLinkedList();
     private class TransactionNotFoundException extends Exception {
         private TransactionNotFoundException(String errorMessage) {
             super(errorMessage);
