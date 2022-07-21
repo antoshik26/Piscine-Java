@@ -1,0 +1,1 @@
+Main-Class: ImageToChar.src.java.app.Program

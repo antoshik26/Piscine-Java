@@ -1,0 +1,10 @@
+-------------------------------------------------------------------------------
+Test set: edu.school21.repositories.EmbeddedDataSourceTest
+-------------------------------------------------------------------------------
+Tests run: 1, Failures: 0, Errors: 1, Skipped: 0, Time elapsed: 0.141 s <<< FAILURE! - in edu.school21.repositories.EmbeddedDataSourceTest
+init  Time elapsed: 0.141 s  <<< ERROR!
+org.springframework.jdbc.datasource.init.ScriptStatementFailedException: Failed to execute SQL script statement #1 of class path resource [schema.sql]: CREATE TABLE Product( Id identity constraint table_name_pk primary key, NameProduct character(30) NOT NULL, Price INTEGER NOT NULL ); nested exception is java.sql.SQLException: Unexpected token: CONSTRAINT in statement [CREATE TABLE Product( Id identity constraint]
+	at edu.school21.repositories.EmbeddedDataSourceTest.init(EmbeddedDataSourceTest.java:26)
+Caused by: java.sql.SQLException: Unexpected token: CONSTRAINT in statement [CREATE TABLE Product( Id identity constraint]
+	at edu.school21.repositories.EmbeddedDataSourceTest.init(EmbeddedDataSourceTest.java:26)
+
